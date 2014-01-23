@@ -13,10 +13,8 @@ $(document).ready(function(){
 			}
 		};	
 	});
-});	
+	
 
-
-$(document).ready(function(){	
 	var a = "input[name='option']";
 			
 	$("#all").on("click", function(){
