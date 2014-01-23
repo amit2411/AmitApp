@@ -12,53 +12,47 @@ $(document).ready(function(){
 				alert("You must enter something to add");
 			}
 		};	
+	});
+});	
+
+
+$(document).ready(function(){	
+	var a = "input[name='option']";
+			
+	$("#all").on("click", function(){
+		$(a).prop("checked", this.checked);
 	
-	
-		
-	$("#all").click(function(){
-		$("input[name='option']").prop("checked", this.checked);
-		
-		if($("input[name='option']").is(":checked")){
-			$("input[name='option']").parent().addClass("red"); 
+		if($(a).is(":checked")){
+			$(a).parent().addClass("red"); 
 		}
 		else{
-			$("input[name='option']").parent().removeClass("red");  
+			$(a).parent().removeClass("red");  
 		}
-		
-	});	
-	
-	$("input[name='option']").click(function(){
-		if ($("input[name='option']").length == $("input[name='option']:checked").length) {
-			$("#all").prop("checked", "checked");
 			
+	});	
+		
+	$("#mydiv").on("click", a, function(){
+		if ($(a).length == $("input[name='option']:checked").length) {
+			$("#all").prop("checked", "checked");
 		}
 		else {
 			$("#all").removeProp("checked");
 		}
 	});
-	
-	
-	$("input[name='option']").click(function (){
+		
+		
+	$("#mydiv").on("click", a, function (){
+	console.log("jjjjjjj");
 		if($(this).is(":checked")){
 			$(this).parent().addClass("red"); 
 		}
 		else{
 			$(this).parent().removeClass("red");  
 		}
-	});	
+	});	  
+});
 	
-			
-			/* 	
-	$("#mydiv").on("click", "input", function(){
-		$(this).find('option').css('color', 'black');
-    $(this).find('option:selected').css('color', 'red');
-		
-		}) */	
 
-    
-});
-	
-});
        
  
 	   
